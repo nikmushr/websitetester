@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sign Up/Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-top: 100px;
+    }
+    
+    h2 {
+      text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    .toggle-form {
+      text-align: center;
+      margin-top: 10px;
+    }
+    
+    .toggle-form a {
+      color: blue;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Sign Up/Login</h2>
+    <form id="signup-form">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Choose a username">
+      <label for="email">Email</label>
+      <input type="text" id="email" name="email" placeholder="Enter your email address">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Choose a password">
+      <button type="submit">Sign Up</button>
+      <div class="toggle-form">
+        Already have an account? <a href="#" onclick="toggleForm()">Log In</a>
+      </div>
+    </form>
+    <form id="login-form" style="display: none;">
+      <label for="login-username">Username</label>
+      <input type="text" id="login-username" name="login-username" placeholder="Your username">
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="login-password" placeholder="Your password">
+      <button type="submit">Log In</button>
+      <div class="toggle-form">
+        Don't have an account? <a href="#" onclick="toggleForm()">Sign Up</a>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function toggleForm() {
+      var signupForm = document.getElementById("signup-form");
+      var loginForm = document.getElementById("login-form");
+      
+      if (signupForm.style.display === "none") {
+        signupForm.style.display = "block";
+        loginForm.style.display = "none";
+      } else {
+        signupForm.style.display = "none";
+        loginForm.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
